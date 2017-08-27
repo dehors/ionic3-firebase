@@ -8,7 +8,7 @@
 
 <ion-content>
 	<ion-list>
-		<button ion-item *ngFor="let item of notes" (click)="itemSelected(item)">
+		<button ion-item *ngFor="let item of notes" (click)="gotoDetail(item.id)">
 			{{ item.title }}
 		</button>  
 	</ion-list>

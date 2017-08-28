@@ -9,6 +9,18 @@ import { HomePage } from '../pages/home/home';
 import { NotesService } from '../services/notes.service';
 import { DetailPage } from '../pages/detail/detail';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ''
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +29,10 @@ import { DetailPage } from '../pages/detail/detail';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

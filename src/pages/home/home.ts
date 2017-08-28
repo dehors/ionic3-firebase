@@ -11,7 +11,10 @@ export class HomePage {
   notes = [];
   @ViewChild('myNav') nav: NavController;
   constructor(public navCtrl: NavController, public notesService: NotesService) {
-    this.notes = notesService.getNotes();
+    notesService.getNotes()
+    .subscribe(notes => {
+      this.notes = notes;
+    });
   }
 
   public gotoDetail(id){

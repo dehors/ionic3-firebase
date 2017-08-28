@@ -10,10 +10,12 @@ export class NotesService{
     {id:3, title:'Note 3', description:'Description of the note 3'}
   ];
   public getNotes(){
-    return this.notes;
+    //return this.notes;
+    return this.afDB.list('notes/');
   }
   public getNote(id){
-    return this.notes.filter(function(e,i){return e.id == id})[0] || {id:null,title:null,description:null};
+    //return this.notes.filter(function(e,i){return e.id == id})[0] || {id:null,title:null,description:null};
+    return this.afDB.object('notes/'+id);
   }
   public createNote(note){
     //this.notes.push(note);

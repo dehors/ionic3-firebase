@@ -20,7 +20,10 @@ export class DetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public noteService: NotesService) {
     this.id = navParams.get("id");
     if (this.id != 0) {
-      this.note = noteService.getNote(this.id);
+      noteService.getNote(this.id)
+      .subscribe(note => {
+        this.note = note;
+      });
     }
   }
 

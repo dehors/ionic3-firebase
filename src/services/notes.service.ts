@@ -13,4 +13,7 @@ export class NotesService{
   public getNote(id){
     return this.notes.filter(function(e,i){return e.id == id})[0] || {id:null,title:null,description:null};
   }
+  public createNote(note){
+    this.notes.push(note);
+  }
 }

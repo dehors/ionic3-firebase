@@ -18,4 +18,8 @@ export class HomePage {
     this.navCtrl.push(DetailPage,{id});
   }
 
+  public createNote(id){
+    this.navCtrl.push(DetailPage,{id:0});
+  }
+
 }

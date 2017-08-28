@@ -22,17 +22,19 @@ export class NotesService{
     this.afDB.database.ref('notes/'+note.id).set(note);
   }
   public editNote(note){
-    for(let i = 0; i < this.notes.length; i++){
+    /*for(let i = 0; i < this.notes.length; i++){
       if (this.notes[i].id == note.id) {
         this.notes[i] == note;
       }
-    }
+    }*/
+    this.afDB.database.ref('notes/'+note.id).set(note);
   }
   public deleteNote(note){
-    for(let i = 0; i < this.notes.length; i++){
+    /*for(let i = 0; i < this.notes.length; i++){
       if (this.notes[i].id == note.id) {
         this.notes.splice(i,1);
       }
-    }
+    }*/
+    this.afDB.database.ref('notes/'+note.id).remove();
   }
 }

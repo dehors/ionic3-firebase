@@ -33,7 +33,6 @@ export class DetailPage {
 
   addNote(){
     if (this.id != 0) {
-      this.note.id = Date.now();
       this.noteService.editNote(this.note);
     }else{
       this.note.id = Date.now();

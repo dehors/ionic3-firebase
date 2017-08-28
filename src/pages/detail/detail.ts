@@ -29,8 +29,13 @@ export class DetailPage {
   }
 
   addNote(){
-    this.note.id = Date.now();
-    this.noteService.createNote(this.note);
+    if (this.id != 0) {
+      this.note.id = Date.now();
+      this.noteService.editNote(this.note);
+    }else{
+      this.note.id = Date.now();
+      this.noteService.createNote(this.note);
+    }
     alert('Done!!!');
     this.navCtrl.pop();
   }

@@ -40,4 +40,10 @@ export class DetailPage {
     this.navCtrl.pop();
   }
 
+  deleteNote(){
+    this.noteService.deleteNote(this.note);
+    alert('Done!!!');
+    this.navCtrl.pop();
+  }
+
 }

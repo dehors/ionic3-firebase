@@ -28,6 +28,9 @@
 
   </ion-list>
   <div padding>
-    <button ion-button block outline (click)="addNote()">Save notes</button>
+    <button ion-button block outline (click)="addNote()">Save note</button>
+  </div>
+  <div padding>
+    <button *ngIf="id != 0" ion-button block outline (click)="deleteNote()" color="danger">Delete note</button>
   </div>
 </ion-content>
